@@ -33,6 +33,7 @@ export default function Overlay({ fill }) {
           <tspan x={40} y={474.909} children="power. Obey the " />
           <tspan x={40} y={525.909} children="power of this our " />
           <tspan x={40} y={576.909} children="pentacle;" />
+          <tspan x={40} y={676.909} children="hola;" />
         </text>
         <text style={{ whiteSpace: 'pre' }} fontFamily="Inter" fontSize={10.5} fontWeight={500} letterSpacing="0em">
           <tspan x={326} y={640.318} children="The Complete Book of Magic Science" />
