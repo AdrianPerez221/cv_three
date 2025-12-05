@@ -299,3 +299,37 @@ main.page {
   letter-spacing: 0.08em;
   opacity: 0.9;
 }
+
+
+.overlay-press-hint {
+  position: fixed;
+  top: 18vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f59e0b;     /* texto "PRESS ME" en gris */
+  pointer-events: none;
+  animation: overlay-press-bounce 1.6s ease-in-out infinite;
+}
+
+.overlay-press-arrow {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #f59e0b;      /* 👈 aquí el naranja, pon el mismo hex que uses en los links */
+}
+
+
+@keyframes overlay-press-bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -10px);
+  }
+}

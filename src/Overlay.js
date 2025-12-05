@@ -10,8 +10,8 @@ const SECTIONS = [
     title: 'Adrián Pérez — Curriculum',
     subtitle: 'Desarrollador Front-end · Interfaces 3D',
     body: `Desarrollo interfaces web interactivas con React, Three.js y GSAP.
-  Me gusta diseñar experiencias fluidas, visualmente cuidadas y fáciles de usar,
-  desde landing pages hasta portfolios y pequeñas herramientas internas para equipos.`,
+Me gusta diseñar experiencias fluidas, visualmente cuidadas y fáciles de usar,
+desde landing pages hasta portfolios y pequeñas herramientas internas para equipos.`,
     meta:
       'JavaScript · TypeScript · React · Next.js · Vite · Three.js · GSAP · Tailwind CSS · HTML · CSS · Node.js · Git'
   },
@@ -56,9 +56,9 @@ const SECTIONS = [
     title: 'Desarrollo web',
     subtitle: 'Ciclo DAW · Front-end moderno',
     body: `Actualmente curso el ciclo de Desarrollo de Aplicaciones Web, que complemento
-  con proyectos propios, documentación oficial y formación online. Me interesa especialmente
-  el front-end moderno y las buenas prácticas
-  en arquitectura de interfaces y organización de proyectos.`,
+con proyectos propios, documentación oficial y formación online. Me interesa especialmente
+el front-end moderno y las buenas prácticas
+en arquitectura de interfaces y organización de proyectos.`,
     meta: '' // sin meta
   },
   {
@@ -67,9 +67,9 @@ const SECTIONS = [
     title: 'Tecnologías y métodos de trabajar.',
     subtitle: 'Stack principal y enfoque',
     body: `Trabajo a diario con React, Vite/Next, Tailwind, Three.js y Git.
-  Me siento cómodo maquetando desde cero, consumiendo APIs y afinando detalles visuales
-  con animaciones. Cuido que el código sea ordenado y legible, pienso en la persona
-  que va a usar la interfaz y procuro dejar todo preparado para que el proyecto pueda crecer.`,
+Me siento cómodo maquetando desde cero, consumiendo APIs y afinando detalles visuales
+con animaciones. Cuido que el código sea ordenado y legible, pienso en la persona
+que va a usar la interfaz y procuro dejar todo preparado para que el proyecto pueda crecer.`,
     meta: 'Frontend · UI · Animaciones · Trabajo en equipo'
   },
   {
@@ -78,11 +78,11 @@ const SECTIONS = [
     title: '¿Por qué esta forma en el centro?',
     subtitle: 'Movimiento, equilibrio y adaptación',
     body: `La figura central no está ahí solo por estética: es una forma casi esférica que representa cómo me gusta trabajar. Cuando el usuario interactúa, el volumen se desplaza, se tensa y se deforma, pero siempre tiende a recuperar su centro. Ese juego entre movimiento y regreso al equilibrio refleja mi manera de entrar en proyectos nuevos: probar, ajustarme y volver a una posición estable sin perder la estructura.
-  
-  La luz y los reflejos cambian según el entorno, igual que cambian los contextos y las necesidades de cada equipo. La clave está en reaccionar, encontrar un nuevo punto de apoyo y volver al centro con una versión mejorada de la misma idea. Por eso el CV gira alrededor de esta forma viva: como metáfora de flexibilidad, curiosidad y capacidad de adaptación continua.`,
+
+La luz y los reflejos cambian según el entorno, igual que cambian los contextos y las necesidades de cada equipo. La clave está en reaccionar, encontrar un nuevo punto de apoyo y volver al centro con una versión mejorada de la misma idea. Por eso el CV gira alrededor de esta forma viva: como metáfora de flexibilidad, curiosidad y capacidad de adaptación continua.`,
     meta: '' // sin meta
   },
-  
+
   // 🔻 SECCIÓN FINAL: CONTACTO + ICONOS
   {
     side: 'left',
@@ -263,6 +263,15 @@ export default function Overlay({ fill, activeSection }) {
 
   return (
     <div className="overlay">
+      {/* Hint flotante solo en Proyectos destacados. */}
+      {section.title &&
+        section.title.startsWith('Proyectos destacados') && (
+          <div className="overlay-press-hint">
+            <span className="overlay-press-label">Press me</span>
+            <span className="overlay-press-arrow">↓</span>
+          </div>
+        )}
+
       <a.div
         key={activeSection}
         ref={contentRef}
